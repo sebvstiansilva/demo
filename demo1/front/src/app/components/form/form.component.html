@@ -1,0 +1,51 @@
+<div class="container-fluid m-0 p-0">
+    <div class="py-2 bg-primary"></div>
+    <div class="container p-5">
+        <div class="row p-5 justify-content-center">
+            <div class="col-md-4">
+                <div class="mb">
+                    <h1>Agregar Auto</h1>
+                    <hr>
+                </div>
+                <form (ngSubmit)="onSubmit()" #auto="ngForm" method="POST">
+                    <div class="mb-3">
+                        <label for="marca" class="form-label">Marca Auto</label>
+                        <input type="text" [(ngModel)]="formAuto.marca" name="marca" id="marca" placeholder="Maserati" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modelo" class="form-label">Modelo Auto</label>
+                        <input type="text" [(ngModel)]="formAuto.modelo" name="modelo" id="modelo" placeholder="Levante Hybrid" class="form-control" required>
+                    </div>
+                    <div class="mb-3 d-grid">
+                        <button type="submit" class="btn btn-outline-primary btn-block">Guardar Auto</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 ms-5">
+                <div class="mb">
+                    <h1>Lista de Autos</h1>
+                    <hr>
+                </div>
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="autos.length > 0">
+                        <tr *ngFor="let auto of autos">
+                            <td>{{ auto.id }}</td>
+                            <td>{{ auto.marca }}</td>
+                            <td>{{ auto.modelo }}</td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="autos.length <= 0">
+                        <td colspan="3" class="text-center py-2">No hay autos ingresados.</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
