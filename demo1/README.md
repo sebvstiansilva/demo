@@ -1,4 +1,4 @@
-# Demo ValpoSystem
+# Proyecto Angular + Java Spring Boot + MySQL
 
 # Front Angular
 [x] Crear formulario de registro 
